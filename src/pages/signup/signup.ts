@@ -71,7 +71,7 @@ export class SignupPage implements OnInit {
             loader.present();
 
             this.authService.registerUser(newUser)
-                .then(function (result) {
+                .then(() => {
                     self.authService.addUser(signupForm.username, signupForm.dateOfBirth, self.authService.getLoggedInUser().uid);
                     loader.dismiss()
                         .then(() => {
